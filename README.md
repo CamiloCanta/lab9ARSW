@@ -127,7 +127,7 @@ Antes de continuar puede eliminar el grupo de recursos anterior para evitar gast
 
 ![](images/part2/part2-lb-create.png)
 
-## Balanceador de carga creado en otra ona, debido a que la licencia de estudiante tiene limitaicones con algunas zonas.
+## Balanceador de carga creado en otra zona, debido a que la licencia de estudiante tiene limitaciones con algunas zonas.
 
 ![image](https://user-images.githubusercontent.com/96396177/234675794-de311d34-6256-46d5-944b-4c04dd78f7ef.png)
 
