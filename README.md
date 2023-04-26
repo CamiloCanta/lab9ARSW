@@ -193,9 +193,15 @@ Ahora vamos a crear 3 VMs (VM1, VM2 y VM3) con direcciones IP públicas standar 
 
 - la licencia de estudiante solo deja que tres recursos tengan una ip publica, por lo tanto solo se pudo crear el load balance, y dos maquinas virtuales con ip publica.
 
+![image](https://user-images.githubusercontent.com/96396177/234721201-d2cce603-a3ae-4b43-b765-5cca41d6ed55.png)
+
+
+
 - en la region que dispone la guia solo estan disponibles dos zonas de redundancia
 
-![image](https://user-images.githubusercontent.com/96396177/234715400-95e4b8c8-0533-4b94-8f62-98c988b60b07.png)
+
+![image](https://user-images.githubusercontent.com/96396177/234719891-b97489da-04e8-4623-baa1-3fe837e2df1a.png)
+
 
 
 
