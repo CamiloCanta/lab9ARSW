@@ -107,21 +107,43 @@ Antes de continuar puede eliminar el grupo de recursos anterior para evitar gast
 
 ![](images/part2/part2-lb-create.png)
 
+## BALANCEADOR CREADO 
+![image](https://user-images.githubusercontent.com/96396177/234448278-702ecae6-b545-4814-8f8b-3c02ea32fabc.png)
+
 2. A continuación cree un *Backend Pool*, guiese con la siguiente imágen.
 
+
 ![](images/part2/part2-lb-bp-create.png)
+
+## BACKEND POOL CREADO
+![image](https://user-images.githubusercontent.com/96396177/234448570-91b2695d-0a08-4a3b-983f-f7a69b2675f7.png)
 
 3. A continuación cree un *Health Probe*, guiese con la siguiente imágen.
 
 ![](images/part2/part2-lb-hp-create.png)
 
+## HEALT PROBE CREADO
+
+![image](https://user-images.githubusercontent.com/96396177/234454558-7a2a8b6a-a06f-4066-8a79-6c81da569d48.png)
+
 4. A continuación cree un *Load Balancing Rule*, guiese con la siguiente imágen.
 
 ![](images/part2/part2-lb-lbr-create.png)
 
+## LOAD BALANCING RULE CREADO
+
+![image](https://user-images.githubusercontent.com/96396177/234454888-2a4e3543-d37b-4f3b-a18d-aac3ccef7c51.png)
+
+
 5. Cree una *Virtual Network* dentro del grupo de recursos, guiese con la siguiente imágen.
 
 ![](images/part2/part2-vn-create.png)
+
+## VIRTUAL NETWORK CREADA
+
+![image](https://user-images.githubusercontent.com/96396177/234455309-c4b4598e-d267-49d1-97a1-62c342022fa9.png)
+
+
 
 #### Crear las maquinas virtuales (Nodos)
 
