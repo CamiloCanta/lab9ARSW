@@ -85,6 +85,9 @@ Consumo:
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
     ```
+    
+    ![image](https://user-images.githubusercontent.com/108955358/234724711-7ce23c54-a856-41cb-a53f-5079bee2928e.png)
+
 
 10. La cantidad de CPU consumida es bastante grande y un conjunto considerable de peticiones concurrentes pueden hacer fallar nuestro servicio. Para solucionarlo usaremos una estrategia de Escalamiento Vertical. En Azure diríjase a la sección *size* y a continuación seleccione el tamaño `B2ms`.
 
@@ -99,9 +102,15 @@ Diferencias de CPU consumida: Es la mitad
 
 ![image](https://user-images.githubusercontent.com/108955358/234457865-a9b29990-0fa7-4dec-854a-a4b8623c7e42.png)
 
+![image](https://user-images.githubusercontent.com/108955358/234724245-011fbe03-0c8c-4b6b-b03c-eb658397664d.png)
+
+
 
 13. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
-14. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
+
+-Se logra observar que al cambiar el tamaño del disco en la VM se evidencia que el escenario de escalabilidad es favorable puesto que el consumo de la cpu se reduce a la mitad y permite que no se presente un fallo como denegación de servicios (ocurrido en el escenario cuando el disco de la maquina era de 0.5GB)
+
+15. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
 **Preguntas**
 
