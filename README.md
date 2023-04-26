@@ -189,9 +189,14 @@ Ahora vamos a crear 3 VMs (VM1, VM2 y VM3) con direcciones IP públicas standar 
 
 ![](images/part2/part2-vm-create4.png)
 
-## VMS creadas
+## VMS creadas, cabe aclarar que solo se pudieron dos maquinas virtuales, por las siguientes razones:
 
-![image](https://user-images.githubusercontent.com/96396177/234676554-410ea4ba-8cd4-4c5d-8d78-dc445a1baf35.png)
+- la licencia de estudiante solo deja que tres recursos tengan una ip publica, por lo tanto solo se pudo crear el load balance, y dos maquinas virtuales con ip publica.
+
+- en la region que dispone la guia solo estan disponibles dos zonas de redundancia
+
+![image](https://user-images.githubusercontent.com/96396177/234715400-95e4b8c8-0533-4b94-8f62-98c988b60b07.png)
+
 
 
 5. Finalmente debemos instalar la aplicación de Fibonacci en la VM. para ello puede ejecutar el conjunto de los siguientes comandos, cambiando el nombre de la VM por el correcto
