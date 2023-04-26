@@ -48,7 +48,13 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores:
     * 1000000
+   
+      ![image](https://user-images.githubusercontent.com/108955358/234455485-edcbaf84-652c-4c1c-accd-9dfb540d368f.png)
+
     * 1010000
+    
+      ![image](https://user-images.githubusercontent.com/108955358/234455581-d6a2883e-fb97-4cbf-bd03-4c3fa534b47e.png)
+
     * 1020000
     * 1030000
     * 1040000
@@ -61,6 +67,11 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 8. Dírijase ahora a Azure y verifique el consumo de CPU para la VM. (Los resultados pueden tardar 5 minutos en aparecer).
 
 ![Imágen 2](images/part1/part1-vm-cpu.png)
+
+Consumo:
+
+![image](https://user-images.githubusercontent.com/108955358/234455815-8caa780b-d90c-4ee2-92f9-f9bf7f655a9d.png)
+
 
 9. Ahora usaremos Postman para simular una carga concurrente a nuestro sistema. Siga estos pasos.
     * Instale newman con el comando `npm install newman -g`. Para conocer más de Newman consulte el siguiente [enlace](https://learning.getpostman.com/docs/postman/collection-runs/command-line-integration-with-newman/).
@@ -77,9 +88,14 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![Imágen 3](images/part1/part1-vm-resize.png)
 
+Diferencias de CPU consumida: Es la mitad
+
+![image](https://user-images.githubusercontent.com/108955358/234456189-6b872148-614c-40e8-a16b-454832230416.png)
+
+
 11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
-12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
-13. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
+13. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
+14. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
 **Preguntas**
 
@@ -107,43 +123,21 @@ Antes de continuar puede eliminar el grupo de recursos anterior para evitar gast
 
 ![](images/part2/part2-lb-create.png)
 
-## BALANCEADOR CREADO 
-![image](https://user-images.githubusercontent.com/96396177/234448278-702ecae6-b545-4814-8f8b-3c02ea32fabc.png)
-
 2. A continuación cree un *Backend Pool*, guiese con la siguiente imágen.
 
-
 ![](images/part2/part2-lb-bp-create.png)
-
-## BACKEND POOL CREADO
-![image](https://user-images.githubusercontent.com/96396177/234448570-91b2695d-0a08-4a3b-983f-f7a69b2675f7.png)
 
 3. A continuación cree un *Health Probe*, guiese con la siguiente imágen.
 
 ![](images/part2/part2-lb-hp-create.png)
 
-## HEALT PROBE CREADO
-
-![image](https://user-images.githubusercontent.com/96396177/234454558-7a2a8b6a-a06f-4066-8a79-6c81da569d48.png)
-
 4. A continuación cree un *Load Balancing Rule*, guiese con la siguiente imágen.
 
 ![](images/part2/part2-lb-lbr-create.png)
 
-## LOAD BALANCING RULE CREADO
-
-![image](https://user-images.githubusercontent.com/96396177/234454888-2a4e3543-d37b-4f3b-a18d-aac3ccef7c51.png)
-
-
 5. Cree una *Virtual Network* dentro del grupo de recursos, guiese con la siguiente imágen.
 
 ![](images/part2/part2-vn-create.png)
-
-## VIRTUAL NETWORK CREADA
-
-![image](https://user-images.githubusercontent.com/96396177/234455309-c4b4598e-d267-49d1-97a1-62c342022fa9.png)
-
-
 
 #### Crear las maquinas virtuales (Nodos)
 
