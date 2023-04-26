@@ -234,6 +234,11 @@ http://52.155.223.248/
 http://52.155.223.248/fibonacci/1
 ```
 
+## Prueba del endpoint del balanceador de carga
+
+![image](https://user-images.githubusercontent.com/96396177/234723112-e23a1fe5-b7a5-4f9f-a976-fd1a1787140d.png)
+
+
 2. Realice las pruebas de carga con `newman` que se realizaron en la parte 1 y haga un informe comparativo donde contraste: tiempos de respuesta, cantidad de peticiones respondidas con éxito, costos de las 2 infraestrucruras, es decir, la que desarrollamos con balanceo de carga horizontal y la que se hizo con una maquina virtual escalada.
 
 3. Agregue una 4 maquina virtual y realice las pruebas de newman, pero esta vez no lance 2 peticiones en paralelo, sino que incrementelo a 4. Haga un informe donde presente el comportamiento de la CPU de las 4 VM y explique porque la tasa de éxito de las peticiones aumento con este estilo de escalabilidad.
