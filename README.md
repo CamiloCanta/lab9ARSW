@@ -121,18 +121,39 @@ El cambio de tamaño de una máquina virtual en Azure puede ser una medida útil
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM? 
 
    Son muchos los recursos que se crean junto a la VM, pero a contuniación se presetan los 10 mas importantes:
-      -Redes virtuales (Virtual Network)
-      -Discos (Disks)
-      -Direcciones IP (IP Addresses)
-      -Grupos de seguridad de red (Network Security Groups)
-      -Configuraciones de disponibilidad (Availability Sets)
-      -Registros de diagnóstico (Diagnostic Logs)
-      -Almacenamiento de blobs (Blob Storage)
-      -Grupos de recursos (Resource Groups)
-      -Configuraciones de equilibrio de carga (Load Balancer Configurations)
-      -Registros de actividad (Activity Logs)
+      - Redes virtuales (Virtual Network)
+      - Discos (Disks)
+      - Direcciones IP (IP Addresses)
+      - Grupos de seguridad de red (Network Security Groups)
+      - Configuraciones de disponibilidad (Availability Sets)
+      - Registros de diagnóstico (Diagnostic Logs)
+      - Almacenamiento de blobs (Blob Storage)
+      - Grupos de recursos (Resource Groups)
+      - Configuraciones de equilibrio de carga (Load Balancer Configurations)
+      - Registros de actividad (Activity Logs)
 
 2. ¿Brevemente describa para qué sirve cada recurso?
+
+      Redes virtuales (Virtual Network): Es un recurso que permite a las máquinas virtuales comunicarse entre sí y con otros recursos de Azure. También se utiliza para definir la conectividad entre redes locales y las redes virtuales de Azure.
+
+      Discos (Disks): Son recursos de almacenamiento que se utilizan para almacenar el sistema operativo y los datos de la máquina virtual. Los discos pueden ser discos duros virtuales (VHD) o discos de estado sólido (SSD).
+
+      Direcciones IP (IP Addresses): Se pueden asignar direcciones IP públicas y privadas a la máquina virtual. Las direcciones IP públicas permiten que la máquina virtual sea accesible desde Internet.
+
+      Grupos de seguridad de red (Network Security Groups): Son recursos que permiten configurar reglas de seguridad para controlar el tráfico de red hacia y desde la máquina virtual. Los grupos de seguridad de red se utilizan para proteger la máquina virtual de posibles amenazas de seguridad.
+
+      Configuraciones de disponibilidad (Availability Sets): Son grupos de máquinas virtuales que se configuran para ofrecer alta disponibilidad y tolerancia a fallos. Las configuraciones de disponibilidad se utilizan para garantizar que las aplicaciones y los servicios sigan funcionando incluso si una o varias máquinas virtuales fallan.
+
+      Registros de diagnóstico (Diagnostic Logs): Son recursos que permiten realizar el seguimiento y la supervisión de las máquinas virtuales y otros recursos de Azure. Los registros de diagnóstico se utilizan para analizar y solucionar problemas de rendimiento y disponibilidad.
+
+      Almacenamiento de blobs (Blob Storage): Es un servicio de almacenamiento de objetos que se utiliza para almacenar y administrar grandes cantidades de datos no estructurados, como imágenes, videos y archivos de registro.
+
+      Grupos de recursos (Resource Groups): Son contenedores lógicos que se utilizan para agrupar los recursos relacionados de Azure en un solo lugar. Los grupos de recursos se utilizan para organizar, administrar y supervisar los recursos de Azure.
+
+      Configuraciones de equilibrio de carga (Load Balancer Configurations): Son recursos que permiten distribuir el tráfico de red entre varias máquinas virtuales. Las configuraciones de equilibrio de carga se utilizan para mejorar el rendimiento y la disponibilidad de las aplicaciones y los servicios.
+
+      Registros de actividad (Activity Logs): Son registros que contienen información detallada sobre las operaciones que se realizan en Azure. Los registros de actividad se utilizan para supervisar y auditar las actividades de los usuarios y los recursos de Azure.
+
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
