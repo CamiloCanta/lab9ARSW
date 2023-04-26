@@ -49,7 +49,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores:
     * 1000000
    
-      ![image](https://user-images.githubusercontent.com/108955358/234455485-edcbaf84-652c-4c1c-accd-9dfb540d368f.png)
+      ![image](https://user-images.githubusercontent.com/108955358/234456788-4248e715-2d42-4dbb-ab85-3e3d899892f4.png)
 
     * 1010000
     
