@@ -108,7 +108,8 @@ Diferencias de CPU consumida: Es la mitad
 
 13. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 
--Se logra observar que al cambiar el tamaño del disco en la VM se evidencia que el escenario de escalabilidad es favorable puesto que el consumo de la cpu se reduce a la mitad y permite que no se presente un fallo como denegación de servicios (ocurrido en el escenario cuando el disco de la maquina era de 0.5GB)
+-Se logra observar que al cambiar el tamaño del disco en la VM se evidencia que el escenario de escalabilidad es favorable puesto que el consumo de la cpu se reduce a la mitad y permite que no se presente un fallo como denegación de servicios (ocurrido en el escenario cuando el disco de la maquina era de 0.5GB).
+El cambio de tamaño de una máquina virtual en Azure puede ser una medida útil para aumentar la capacidad del sistema, pero es importante considerar que la escalabilidad implica no solo aumentar el tamaño de la máquina, sino también tener en cuenta otros aspectos como la distribución de la carga y la capacidad de recuperación ante fallos.
 
 15. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
