@@ -58,6 +58,9 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
       ![image](https://user-images.githubusercontent.com/108955358/234457222-d9264c6a-6cbb-4765-8ef3-804663617ba8.png)
 
     * 1020000
+
+      ![image](https://user-images.githubusercontent.com/108955358/234726139-56864d0f-e91a-4458-84a4-80bc536898e7.png)
+
     * 1030000
     * 1040000
     * 1050000
@@ -106,16 +109,29 @@ Diferencias de CPU consumida: Es la mitad
 
 
 
-13. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
+12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 
 -Se logra observar que al cambiar el tamaño del disco en la VM se evidencia que el escenario de escalabilidad es favorable puesto que el consumo de la cpu se reduce a la mitad y permite que no se presente un fallo como denegación de servicios (ocurrido en el escenario cuando el disco de la maquina era de 0.5GB).
 El cambio de tamaño de una máquina virtual en Azure puede ser una medida útil para aumentar la capacidad del sistema, pero es importante considerar que la escalabilidad implica no solo aumentar el tamaño de la máquina, sino también tener en cuenta otros aspectos como la distribución de la carga y la capacidad de recuperación ante fallos.
 
-15. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
+13. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
 **Preguntas**
 
-1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
+1. ¿Cuántos y cuáles recursos crea Azure junto con la VM? 
+
+   Son muchos los recursos que se crean junto a la VM, pero a contuniación se presetan los 10 mas importantes:
+      -Redes virtuales (Virtual Network)
+      -Discos (Disks)
+      -Direcciones IP (IP Addresses)
+      -Grupos de seguridad de red (Network Security Groups)
+      -Configuraciones de disponibilidad (Availability Sets)
+      -Registros de diagnóstico (Diagnostic Logs)
+      -Almacenamiento de blobs (Blob Storage)
+      -Grupos de recursos (Resource Groups)
+      -Configuraciones de equilibrio de carga (Load Balancer Configurations)
+      -Registros de actividad (Activity Logs)
+
 2. ¿Brevemente describa para qué sirve cada recurso?
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
