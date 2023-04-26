@@ -49,11 +49,11 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores:
     * 1000000
    
-      ![image](https://user-images.githubusercontent.com/108955358/234456788-4248e715-2d42-4dbb-ab85-3e3d899892f4.png)
+      ![image](https://user-images.githubusercontent.com/108955358/234457078-77b10f99-ec94-439f-b544-6af199ec22f0.png)
 
     * 1010000
     
-      ![image](https://user-images.githubusercontent.com/108955358/234455581-d6a2883e-fb97-4cbf-bd03-4c3fa534b47e.png)
+      ![image](https://user-images.githubusercontent.com/108955358/234457222-d9264c6a-6cbb-4765-8ef3-804663617ba8.png)
 
     * 1020000
     * 1030000
@@ -70,7 +70,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 Consumo:
 
-![image](https://user-images.githubusercontent.com/108955358/234455815-8caa780b-d90c-4ee2-92f9-f9bf7f655a9d.png)
+![image](https://user-images.githubusercontent.com/108955358/234457431-417d3b84-3d30-4262-85b5-bd5cafdbee03.png)
 
 
 9. Ahora usaremos Postman para simular una carga concurrente a nuestro sistema. Siga estos pasos.
@@ -90,10 +90,14 @@ Consumo:
 
 Diferencias de CPU consumida: Es la mitad
 
-![image](https://user-images.githubusercontent.com/108955358/234456189-6b872148-614c-40e8-a16b-454832230416.png)
+![image](https://user-images.githubusercontent.com/108955358/234457627-ede02b6c-7ca5-4d22-91cd-58756758a0a8.png)
 
 
 11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
+
+![image](https://user-images.githubusercontent.com/108955358/234457865-a9b29990-0fa7-4dec-854a-a4b8623c7e42.png)
+
+
 13. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 14. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
