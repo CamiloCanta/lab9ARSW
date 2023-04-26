@@ -127,21 +127,47 @@ Antes de continuar puede eliminar el grupo de recursos anterior para evitar gast
 
 ![](images/part2/part2-lb-create.png)
 
+## Balanceador de carga creado en otra ona, debido a que la licencia de estudiante tiene limitaicones con algunas zonas.
+
+![image](https://user-images.githubusercontent.com/96396177/234675794-de311d34-6256-46d5-944b-4c04dd78f7ef.png)
+
+
 2. A continuación cree un *Backend Pool*, guiese con la siguiente imágen.
 
 ![](images/part2/part2-lb-bp-create.png)
+
+## Backend pool creado
+
+![image](https://user-images.githubusercontent.com/96396177/234676052-a52a18ab-2e23-45c8-a33a-9545caf961b6.png)
+
 
 3. A continuación cree un *Health Probe*, guiese con la siguiente imágen.
 
 ![](images/part2/part2-lb-hp-create.png)
 
+## Healt probe creado
+
+![image](https://user-images.githubusercontent.com/96396177/234676138-e0a7563b-cf64-43a3-9973-a123a74b6ff0.png)
+
 4. A continuación cree un *Load Balancing Rule*, guiese con la siguiente imágen.
 
 ![](images/part2/part2-lb-lbr-create.png)
 
+##Load balance rule creado
+
+![image](https://user-images.githubusercontent.com/96396177/234676218-57506c13-c1df-4923-86c3-811e00417500.png)
+
+
 5. Cree una *Virtual Network* dentro del grupo de recursos, guiese con la siguiente imágen.
 
 ![](images/part2/part2-vn-create.png)
+
+## Network creada con subnet
+
+![image](https://user-images.githubusercontent.com/96396177/234676367-27954031-d667-4105-a7cd-ef1658d8a109.png)
+
+![image](https://user-images.githubusercontent.com/96396177/234676440-3fdcfbed-939c-4cb4-abda-2955b154fbc8.png)
+
 
 #### Crear las maquinas virtuales (Nodos)
 
@@ -162,6 +188,11 @@ Ahora vamos a crear 3 VMs (VM1, VM2 y VM3) con direcciones IP públicas standar 
 4. Ahora asignaremos esta VM a nuestro balanceador de carga, para ello siga la configuración de la siguiente imágen.
 
 ![](images/part2/part2-vm-create4.png)
+
+## VMS creadas
+
+![image](https://user-images.githubusercontent.com/96396177/234676554-410ea4ba-8cd4-4c5d-8d78-dc445a1baf35.png)
+
 
 5. Finalmente debemos instalar la aplicación de Fibonacci en la VM. para ello puede ejecutar el conjunto de los siguientes comandos, cambiando el nombre de la VM por el correcto
 
