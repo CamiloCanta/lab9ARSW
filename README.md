@@ -107,12 +107,6 @@ Diferencias de CPU consumida: Es la mitad
 
 11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
 
-![image](https://user-images.githubusercontent.com/108955358/234457865-a9b29990-0fa7-4dec-854a-a4b8623c7e42.png)
-
-![image](https://user-images.githubusercontent.com/108955358/234724245-011fbe03-0c8c-4b6b-b03c-eb658397664d.png)
-
-
-
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 
 -Se logra observar que al cambiar el tamaño del disco en la VM se evidencia que el escenario de escalabilidad es favorable puesto que el consumo de la cpu se reduce a la mitad y permite que no se presente un fallo como denegación de servicios (ocurrido en el escenario cuando el disco de la maquina era de 0.5GB).
@@ -180,13 +174,42 @@ Es necesario crear una regla de puerto de entrada (Inbound port rule) para acced
 
       B1Ls:
       
-    ![image](https://user-images.githubusercontent.com/108955358/234724711-7ce23c54-a856-41cb-a53f-5079bee2928e.png)
+      ![image](https://user-images.githubusercontent.com/108955358/234724711-7ce23c54-a856-41cb-a53f-5079bee2928e.png)
+    
+    
+      B2ms:
+      
+      ![image](https://user-images.githubusercontent.com/108955358/234724245-011fbe03-0c8c-4b6b-b03c-eb658397664d.png)
    
+      En el primer caso hubo fallos debido al alto consumo de la cpu es probable que sufrío de denegación de servecios, en el segundo caso cuando los recurso de la cpu fueron más estables paso todas las pruebas.
+
 
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+
+     La diferencia entre los tamaños B2ms y B1ls en Azure no se encuentra solo en las especificaciones de infraestructura, sino que también se diferencian en la capacidad de procesamiento y rendimiento que ofrecen.
+
+      El tamaño B2ms es una instancia de VM que se encuentra en la serie B de Azure. Esta instancia tiene una capacidad de procesamiento mayor que la instancia B1ls, lo que significa que puede manejar cargas de trabajo más grandes y complejas. Además, ofrece más memoria RAM y núcleos de CPU que la instancia B1ls, lo que se traduce en una mejor capacidad de procesamiento y un mejor rendimiento para las aplicaciones que se ejecutan en ella.
+
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+
+   Aumentar el tamaño de la VM puede ser una buena solución en algunos escenarios, dependiendo de la naturaleza de la carga de trabajo y los recursos requeridos por la aplicación. Si la aplicación requiere más recursos de procesamiento y memoria para funcionar correctamente, aumentar el tamaño de la VM puede ayudar a mejorar el rendimiento y la capacidad de la aplicación para manejar una mayor cantidad de solicitudes.
+
+   Sin embargo, también hay que considerar que aumentar el tamaño de la VM puede aumentar el costo de la solución y que puede haber límites en cuanto a la escalabilidad vertical de una sola VM
+   
+   Lo que pasa con FibonacciApp al cambiar el tamaño de la VM es que la maquina virtual no se vera afectada si se realizan varias peteciones ya que tiene los recursos para correr las peticiones.
+
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
+
+   Reinicio de la VM: En algunos casos, puede ser necesario reiniciar la VM para aplicar los cambios de tamaño. Esto puede provocar una interrupción en el servicio.
+
+   Cambio en el rendimiento de la red: Al aumentar el tamaño de la VM, puede haber un cambio en la capacidad de la red subyacente para soportar el tráfico generado por la aplicación. Es posible que se requiera ajustar los recursos de red para asegurarse de que la VM tenga suficiente ancho de banda para su tráfico de red.
+
+   Cambio en el costo: A medida que se aumenta el tamaño de la VM, también aumenta el costo de la solución. Esto puede ser una consideración importante a la hora de evaluar la escalabilidad de la aplicación.
+
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+
+   Solo Hubo mejoria en el consumo de la CPU ya que para eso se aumento el tamaño del disco, para aumentar el poder de procesamiento.
+
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
 
 ### Parte 2 - Escalabilidad horizontal
