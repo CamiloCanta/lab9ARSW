@@ -82,11 +82,6 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![Imágen 2](images/part1/part1-vm-cpu.png)
 
-Consumo:
-
-![image](https://user-images.githubusercontent.com/108955358/234457431-417d3b84-3d30-4262-85b5-bd5cafdbee03.png)
-
-
 9. Ahora usaremos Postman para simular una carga concurrente a nuestro sistema. Siga estos pasos.
     * Instale newman con el comando `npm install newman -g`. Para conocer más de Newman consulte el siguiente [enlace](https://learning.getpostman.com/docs/postman/collection-runs/command-line-integration-with-newman/).
     * Diríjase hasta la ruta `FibonacciApp/postman` en una maquina diferente a la VM.
@@ -97,26 +92,13 @@ Consumo:
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
     ```
-    
-    ![image](https://user-images.githubusercontent.com/108955358/234724711-7ce23c54-a856-41cb-a53f-5079bee2928e.png)
 
 
 10. La cantidad de CPU consumida es bastante grande y un conjunto considerable de peticiones concurrentes pueden hacer fallar nuestro servicio. Para solucionarlo usaremos una estrategia de Escalamiento Vertical. En Azure diríjase a la sección *size* y a continuación seleccione el tamaño `B2ms`.
 
 ![Imágen 3](images/part1/part1-vm-resize.png)
 
-Diferencias de CPU consumida: Es la mitad
-
-![image](https://user-images.githubusercontent.com/108955358/234457627-ede02b6c-7ca5-4d22-91cd-58756758a0a8.png)
-
-
 11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
-
-![image](https://user-images.githubusercontent.com/108955358/234457865-a9b29990-0fa7-4dec-854a-a4b8623c7e42.png)
-
-![image](https://user-images.githubusercontent.com/108955358/234724245-011fbe03-0c8c-4b6b-b03c-eb658397664d.png)
-
-
 
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 
