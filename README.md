@@ -338,6 +338,9 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
 ```
+RTA:
+El escalamiento horizontal tiene una tasa de éxito más alta que el escalamiento horizontal porque el escalamiento horizontal agrega más recursos (máquinas virtuales, instancias, etc.) al sistema para manejar el aumento de la carga de trabajo, mientras que el escalamiento horizontal agrega recursos (CPU, RAM, etc.). por caso.
+En otras palabras, el escalado horizontal divide el sistema en varias instancias, lo que permite que el sistema maneje más solicitudes y aumente la potencia de procesamiento. Por lo tanto, espere una mayor tasa de éxito de escalado a medida que se utilicen más recursos y la carga de trabajo se distribuya de manera más eficiente.
 
 **Preguntas**
 
