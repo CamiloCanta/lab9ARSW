@@ -244,7 +244,7 @@ Antes de continuar puede eliminar el grupo de recursos anterior para evitar gast
 
 ![](images/part2/part2-lb-lbr-create.png)
 
-##Load balance rule creado
+## Load balance rule creado
 
 ![image](https://user-images.githubusercontent.com/96396177/234676218-57506c13-c1df-4923-86c3-811e00417500.png)
 
