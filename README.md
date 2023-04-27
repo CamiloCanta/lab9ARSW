@@ -374,6 +374,16 @@ RTA : Una zona de disponibilidad es una ubicación física aislada dentro de una
 
 RTA: El propósito del grupo de seguridad de red es controlar el acceso de red a los recursos en la red virtual de Azure. Se pueden crear reglas para permitir o denegar el tráfico entrante o saliente según la dirección IP, el puerto, el protocolo y más. Ayuda a proteger los recursos de Azure de posibles amenazas externas y garantiza la seguridad de la red.
 * Informe de newman 1 (Punto 2)
+
+
+| Condiciones | Escalabilidad Horizontal | Escalabilidad Vertical |
+|---|---|---|
+| Tiempo de Respuesta Promedio | 18,4 s - 18,7 s | 120,7 s - 120,9 s |
+| Cantidad de Peticiones Respondidas con Éxito | 10 | 10 |
+| Costo CPU | 37% por VM | 60% |
+| Costo Red | 573.76 MB | 736.89 MB |
+
+
 * Presente el Diagrama de Despliegue de la solución.
 
 
