@@ -62,8 +62,18 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
       ![image](https://user-images.githubusercontent.com/108955358/234726139-56864d0f-e91a-4458-84a4-80bc536898e7.png)
 
     * 1030000
+
+      ![image](https://user-images.githubusercontent.com/108955358/234726868-53684314-ef53-41aa-9a81-c7f2fcb3a6c1.png)
+
     * 1040000
+
+      ![image](https://user-images.githubusercontent.com/108955358/234727693-9a411195-b253-435b-ba5b-39020da5d2d3.png)
+
     * 1050000
+
+      ![image](https://user-images.githubusercontent.com/108955358/234728016-29544e6d-b1bd-4324-80eb-03fe771a8303.png)
+
+
     * 1060000
     * 1070000
     * 1080000
@@ -72,10 +82,6 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 8. Dírijase ahora a Azure y verifique el consumo de CPU para la VM. (Los resultados pueden tardar 5 minutos en aparecer).
 
 ![Imágen 2](images/part1/part1-vm-cpu.png)
-
-Consumo:
-
-![image](https://user-images.githubusercontent.com/108955358/234457431-417d3b84-3d30-4262-85b5-bd5cafdbee03.png)
 
 
 9. Ahora usaremos Postman para simular una carga concurrente a nuestro sistema. Siga estos pasos.
@@ -88,8 +94,6 @@ Consumo:
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
     ```
-    
-    ![image](https://user-images.githubusercontent.com/108955358/234724711-7ce23c54-a856-41cb-a53f-5079bee2928e.png)
 
 
 10. La cantidad de CPU consumida es bastante grande y un conjunto considerable de peticiones concurrentes pueden hacer fallar nuestro servicio. Para solucionarlo usaremos una estrategia de Escalamiento Vertical. En Azure diríjase a la sección *size* y a continuación seleccione el tamaño `B2ms`.
@@ -155,11 +159,30 @@ El cambio de tamaño de una máquina virtual en Azure puede ser una medida útil
       Registros de actividad (Activity Logs): Son registros que contienen información detallada sobre las operaciones que se realizan en Azure. Los registros de actividad se utilizan para supervisar y auditar las actividades de los usuarios y los recursos de Azure.
 
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
+
+      Al cerrar la conexión ssh con la VM, la aplicación que se ejecuta con el comando npm FibonacciApp.js se cae porque el proceso que lo ejecuta se asocia con la sesión de ssh en la que se inició. Cuando se cierra la sesión ssh, se termina el proceso y la aplicación ya no se está ejecutando.
+
+Es necesario crear una regla de puerto de entrada (Inbound port rule) para acceder al servicio porque, por defecto, Azure bloquea todos los puertos de entrada a una VM por razones de seguridad. Al crear una regla de puerto de entrada, se especifica qué puertos se deben abrir para permitir el tráfico entrante. En este caso, la regla de puerto de entrada permite que el tráfico entrante en el puerto 3000 pueda acceder a la aplicación FibonacciApp.js.
+
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
+
+      (Las imagenes estan adjuntas arriba) Bien se nos explica que es una aplicación que no esta optimizada para ser rapida y mientras mayor sea la peticion, el tiempo aumentara
+      
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
+
+      ![image](https://user-images.githubusercontent.com/108955358/234457431-417d3b84-3d30-4262-85b5-bd5cafdbee03.png)
+      
+      El consumo es grando debido a que es una petición grande y la maquina tiene poca memoria para el procesamiento de la cpu
+
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
     * Si hubo fallos documentelos y explique.
+
+      B1Ls:
+      
+    ![image](https://user-images.githubusercontent.com/108955358/234724711-7ce23c54-a856-41cb-a53f-5079bee2928e.png)
+   
+
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
