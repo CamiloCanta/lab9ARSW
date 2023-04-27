@@ -62,8 +62,17 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
       ![image](https://user-images.githubusercontent.com/108955358/234726139-56864d0f-e91a-4458-84a4-80bc536898e7.png)
 
     * 1030000
+    
+      ![image](https://user-images.githubusercontent.com/108955358/234726868-53684314-ef53-41aa-9a81-c7f2fcb3a6c1.png)
+    
     * 1040000
+    
+      ![image](https://user-images.githubusercontent.com/108955358/234727693-9a411195-b253-435b-ba5b-39020da5d2d3.png)
+    
     * 1050000
+    
+      ![image](https://user-images.githubusercontent.com/108955358/234728016-29544e6d-b1bd-4324-80eb-03fe771a8303.png)
+    
     * 1060000
     * 1070000
     * 1080000
@@ -155,16 +164,67 @@ El cambio de tamaño de una máquina virtual en Azure puede ser una medida útil
       Registros de actividad (Activity Logs): Son registros que contienen información detallada sobre las operaciones que se realizan en Azure. Los registros de actividad se utilizan para supervisar y auditar las actividades de los usuarios y los recursos de Azure.
 
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
+
+   Al cerrar la conexión ssh con la VM, la aplicación que se ejecuta con el comando npm FibonacciApp.js se cae porque el proceso que lo ejecuta se asocia con la sesión de ssh en la que se inició. Cuando se cierra la sesión ssh, se termina el proceso y la aplicación ya no se está ejecutando.
+
+   Es necesario crear una regla de puerto de entrada (Inbound port rule) para acceder al servicio porque, por defecto, Azure bloquea todos los puertos de entrada a una VM por razones de seguridad. Al crear una regla de puerto de entrada, se especifica qué puertos se deben abrir para permitir el tráfico entrante. En este caso, la regla de puerto de entrada permite que el tráfico entrante en el puerto 3000 pueda acceder a la aplicación FibonacciApp.js.
+
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
+
+   (Las imagenes estan adjuntas arriba) Bien se nos explica que es una aplicación que no esta optimizada para ser rapida y mientras mayor sea la peticion, el tiempo aumentara, junto a esto el poder de procesamiento de la VM es relativamente pequeño.
+
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
+
+   ![image](https://user-images.githubusercontent.com/108955358/234457431-417d3b84-3d30-4262-85b5-bd5cafdbee03.png)
+
+    El consumo es grando debido a que es una petición grande y la maquina tiene poca memoria para el procesamiento de la cpu
+
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
     * Si hubo fallos documentelos y explique.
+    
+      B1Ls:
+
+      ![image](https://user-images.githubusercontent.com/108955358/234724711-7ce23c54-a856-41cb-a53f-5079bee2928e.png)
+
+
+      B2ms:
+
+      ![image](https://user-images.githubusercontent.com/108955358/234724245-011fbe03-0c8c-4b6b-b03c-eb658397664d.png)
+    
+    
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+
+   La diferencia entre los tamaños B2ms y B1ls en Azure no se encuentra solo en las especificaciones de infraestructura, sino que también se diferencian en la capacidad de procesamiento y rendimiento que ofrecen.
+
+      El tamaño B2ms es una instancia de VM que se encuentra en la serie B de Azure. Esta instancia tiene una capacidad de procesamiento mayor que la instancia B1ls, lo que significa que puede manejar cargas de trabajo más grandes y complejas. Además, ofrece más memoria RAM y núcleos de CPU que la instancia B1ls, lo que se traduce en una mejor capacidad de procesamiento y un mejor rendimiento para las aplicaciones que se ejecutan en ella.
+   
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+
+    Aumentar el tamaño de la VM puede ser una buena solución en algunos escenarios, dependiendo de la naturaleza de la carga de trabajo y los recursos requeridos por la aplicación. Si la aplicación requiere más recursos de procesamiento y memoria para funcionar correctamente, aumentar el tamaño de la VM puede ayudar a mejorar el rendimiento y la capacidad de la aplicación para manejar una mayor cantidad de solicitudes.
+
+   Sin embargo, también hay que considerar que aumentar el tamaño de la VM puede aumentar el costo de la solución y que puede haber límites en cuanto a la escalabilidad vertical de una sola VM
+
+   Lo que pasa con FibonacciApp al cambiar el tamaño de la VM es que la maquina virtual no se vera afectada si se realizan varias peteciones ya que tiene los recursos para correr las peticiones.
+
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
+
+   Reinicio de la VM: En algunos casos, puede ser necesario reiniciar la VM para aplicar los cambios de tamaño. Esto puede provocar una interrupción en el servicio.
+
+   Cambio en el rendimiento de la red: Al aumentar el tamaño de la VM, puede haber un cambio en la capacidad de la red subyacente para soportar el tráfico generado por la aplicación. Es posible que se requiera ajustar los recursos de red para asegurarse de que la VM tenga suficiente ancho de banda para su tráfico de red.
+
+   Cambio en el costo: A medida que se aumenta el tamaño de la VM, también aumenta el costo de la solución. Esto puede ser una consideración importante a la hora de evaluar la escalabilidad de la aplicación.
+
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+
+   Solo Hubo mejoria en el consumo de la CPU ya que para eso se aumento el tamaño del disco, para aumentar el poder de procesamiento.
+      
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+   El tiempo de respuesta disminuyo:
+
+   ![image](https://user-images.githubusercontent.com/108955358/234730989-c1f99858-d8f9-4c8c-bfce-5a33a53941bb.png)
+
 
 ### Parte 2 - Escalabilidad horizontal
 
