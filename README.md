@@ -391,5 +391,7 @@ RTA: El propósito del grupo de seguridad de red es controlar el acceso de red a
 * Presente el Diagrama de Despliegue de la solución.
 
 
+![Untitled Diagram drawio (17)](https://user-images.githubusercontent.com/96396177/234740273-277ec5dd-3663-4da4-a80b-7d28c3e98467.png)
+
 
 
